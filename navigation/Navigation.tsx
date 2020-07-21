@@ -3,7 +3,6 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import Dishes from '../views/Dishes'
 import DishDetail from '../views/DishDetail'
-import { connect } from 'react-redux'
 
 const Stack = createStackNavigator()
 

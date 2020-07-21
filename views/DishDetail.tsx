@@ -14,8 +14,9 @@ const DishDetail = (props: Props) => {
     // Will change heightAnim value to 1 in 5 seconds
     setOpen(!open)
     Animated.timing(posAnim, {
-      toValue: (Dimensions.get('screen').height / 1.5) - (open ? (Dimensions.get('screen').height / 1.9) : 30),
-      duration: 500
+      toValue: Number(Dimensions.get('screen').height / 1.5) - (open ? (Dimensions.get('screen').height / 1.9) : 30),
+      duration: 500,
+      useNativeDriver: true
     }).start();
   }
   const arrayMaker = (hot: number) => {
