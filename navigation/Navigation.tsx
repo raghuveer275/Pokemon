@@ -1,19 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import Dishes from '../views/Dishes'
 import DishDetail from '../views/DishDetail'
 import { connect } from 'react-redux'
-import { Image, Dimensions, Text, View } from 'react-native'
 
 const Stack = createStackNavigator()
 
-type Props = {
-  bgrdImage: string
-}
-
-const Navigation = (props: Props) => {
-  const [open, setOpen] = useState(true)
+const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -23,7 +17,8 @@ const Navigation = (props: Props) => {
           options={{
             headerTitle: 'PranaaFood',
             headerTitleStyle: {
-              color: '#FFF'
+              color: '#FFF',
+              fontWeight: 'bold'
             },
             headerStyle: {
               backgroundColor: '#00A24A'
@@ -36,17 +31,10 @@ const Navigation = (props: Props) => {
           options={{
             headerTitle: '',
             headerTintColor: '#FFF',
-            headerBackground: () => (
-              <View
-                onTouchEndCapture={() => setOpen(!open)}
-                style={{ height: Dimensions.get('screen').height / (open ? 2 : 4) }}
-              >
-                <Image
-                  style={{ height: Dimensions.get('screen').height / (open ? 2 : 4) }}
-                  source={{ uri: props.bgrdImage }}
-                />
-              </View>
-            ),
+            headerLeft: null,
+            headerStyle: {
+              height: 0
+            },
             animationEnabled: false
           }}
         />
@@ -55,10 +43,4 @@ const Navigation = (props: Props) => {
   )
 }
 
-const mapStateToProps = (state: any) => {
-  return {
-    bgrdImage: state.dish.bgrdImage
-  }
-}
-
-export default connect(mapStateToProps)(Navigation)
+export default Navigation
