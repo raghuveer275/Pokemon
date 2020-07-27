@@ -66,7 +66,7 @@ const Dishes = (props: Props) => {
                 style={{
                   backgroundColor: 'white',
                   width: '100%',
-                  height: 280,
+                  height: 205,
                   borderRadius: 5
                 }}>
                 <Image
@@ -74,13 +74,13 @@ const Dishes = (props: Props) => {
                   style={{
                     borderRadius: 5,
                     width: '100%',
-                    height: 220
+                    height: 150
                   }}
                   source={{ uri: dis.Images[0].image }} />
                 <Text
                   style={{
                     width: '100%',
-                    padding: 10,
+                    padding: 8,
                     fontWeight: 'bold',
                     textAlign: 'center'
                   }}>

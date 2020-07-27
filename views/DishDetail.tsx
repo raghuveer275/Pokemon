@@ -16,7 +16,7 @@ const DishDetail = (props: Props) => {
     Animated.timing(posAnim, {
       toValue: Number(Dimensions.get('screen').height / 1.5) - (open ? (Dimensions.get('screen').height / 1.9) : 30),
       duration: 500,
-      useNativeDriver: true
+      useNativeDriver: false
     }).start();
   }
   const arrayMaker = (hot: number) => {
@@ -104,22 +104,24 @@ const DishDetail = (props: Props) => {
         </Text>
         <Text
           style={{
-            color: '#00A24A',
-            fontSize: 18,
-            fontWeight: '700',
+            fontSize: 16,
+            fontWeight: 'bold',
+            color: 'tomato',
             marginBottom: 25,
             marginRight: 30
           }}>
           {props.detail.category.toString().toUpperCase()}
         </Text>
+        {props.detail.hot > 0 && <>
         <Text
           style={{
             fontSize: 18,
-            fontWeight: '700'
+            fontWeight: '700',
+            color: '#00A24A'
           }}>
           Spiciness
       </Text>
-        <View
+      <View
           style={{
             display: "flex",
             flexDirection: 'row',
@@ -135,11 +137,12 @@ const DishDetail = (props: Props) => {
             />
           )}
         </View>
-
+        </>}
         <Text
           style={{
             fontSize: 18,
-            fontWeight: '700'
+            fontWeight: '700',
+            color: '#00A24A'
           }}>
           Description
       </Text>
@@ -154,7 +157,8 @@ const DishDetail = (props: Props) => {
         <Text
           style={{
             fontSize: 18,
-            fontWeight: '700'
+            fontWeight: '700',
+            color: '#00A24A'
           }}>
           Ingredients
       </Text>
@@ -169,7 +173,8 @@ const DishDetail = (props: Props) => {
         <Text
           style={{
             fontSize: 18,
-            fontWeight: '700'
+            fontWeight: '700',
+            color: '#00A24A'
           }}>
           Nutritional Information
       </Text>
@@ -190,7 +195,8 @@ const DishDetail = (props: Props) => {
         <Text
           style={{
             fontSize: 18,
-            fontWeight: '700'
+            fontWeight: '700',
+            color: '#00A24A'
           }}>
           Allergens
       </Text>
